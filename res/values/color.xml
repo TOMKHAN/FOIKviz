@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="foi_crvena">#CE003D</color>
+    <color name="foi_narancasta">#F8B323</color>
+    <color name="xica_textovi">#B4B4B4</color>
+    <color name="transparentno">#00000000</color>
+    <color name="bijela">#ffffff</color>
+    <color name="transparentnoWidget">#DDDDDDDD</color>
+    <color name="crna">#000000</color>
+
+</resources>

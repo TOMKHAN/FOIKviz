@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_clear"
+    android:orientation="vertical" >
+
+    <ImageButton
+        android:id="@+id/oblak1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/oblak3"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/oblak1" />
+
+    <ImageButton
+        android:id="@+id/oblak2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="-10dp"
+        android:background="@drawable/selector_button_nagrade" />
+
+    <ImageButton
+        android:id="@+id/oblak4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/oblak2"
+        android:layout_below="@+id/oblak2"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/oblak4" />
+
+    <ImageButton
+        android:id="@+id/button_na_kviz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/selector_pocetna_button" />
+
+    <ImageButton
+        android:id="@+id/oblak3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="-10dp"
+        android:background="@drawable/selector_button_scores" />
+
+    <ImageButton
+        android:id="@+id/ponovnaAnimacija"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/obavjestOProslomIgracu"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/foi_logo"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/logo2" />
+
+    <ImageView
+        android:id="@+id/iv_otkrij_koliko_znas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button_na_kviz"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/otkrij_koliko_znas" />
+
+</RelativeLayout>

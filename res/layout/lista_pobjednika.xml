@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/score_bg" >
+
+    <RelativeLayout
+        android:id="@+id/lista_pobjednika_rl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="250dp" >
+
+        <TextView
+            android:id="@+id/lista_pobjednika_tv_ime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            
+            android:textSize="30sp"
+            android:textColor="@color/crna" />
+
+        <TextView
+            android:id="@+id/lista_pobjednika_datum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="100dp"
+            android:layout_toLeftOf="@+id/lista_pobjednika_tv_vrijeme_rjesavanja"
+            android:textSize="25sp"
+            android:textColor="@color/crna" />
+
+        <TextView
+            android:id="@+id/lista_pobjednika_tv_vrijeme_rjesavanja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="25sp"
+            android:textColor="@color/crna" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/datalist_pobjednik"
+        android:layout_width="match_parent"
+        android:layout_height="425dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/lista_pobjednika_rl1" >
+    </ListView>
+
+    <Button
+        android:id="@+id/pobjeda_btn_nazad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="120dp"
+        android:layout_above="@+id/tv_string_pobjednika"
+        android:layout_marginLeft="90dp"
+        android:background="@drawable/selector_button_natrag" />
+    
+    <TextView 
+        android:id="@+id/tv_string_pobjednika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Broj pobjednika: "
+        />
+    <TextView 
+        android:id="@+id/tv_broj_pobjednika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv_string_pobjednika"
+        android:layout_alignBottom="@+id/tv_string_pobjednika"
+        />
+
+</RelativeLayout>
