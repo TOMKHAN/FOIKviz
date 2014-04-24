@@ -3,7 +3,7 @@ FOIkviz
 
 This app was created for University Fair -> http://smotra.unizg.hr/
 I was the one from the students representing FOI - > http://www.foi.unizg.hr/ and was given a task to make an app for checking high school seniors knowledge about FOI.
-This version is for tablet (Asus Transformer, Huawei MediaPad 7 etc..) screens only, on mobiles it looks awful.
+This version is for tablet (Asus Transformer, Huawei MediaPad 7 etc..) screens only, on mobiles it looks awful. (you can check it in for-mobile-screen branch)
 
 It was so good that the president of Croatia(Josipović) was too afraid to use it ->http://i.imgur.com/7XsZKtK.jpg.
 Even so, it can use lots of improvements.
