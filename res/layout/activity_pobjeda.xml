@@ -12,34 +12,33 @@
 
         <ImageButton
             android:id="@+id/btn_nazad_pobjeda"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="5dp"
             android:layout_alignParentBottom="true"
             android:background="@drawable/selector_button_natrag" />
         
         <ImageButton
             android:id="@+id/btn_upisi_pobjednika"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:layout_toRightOf="@+id/btn_nazad_pobjeda"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="5dp"
             android:layout_alignTop="@+id/btn_nazad_pobjeda"
-            android:layout_marginLeft="30dp"
-            android:background="@drawable/selector_button_upisi" />
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_button_natrag" />
 
         <EditText
             android:id="@+id/pobjeda_ime_prezime"
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_above="@+id/btn_nazad_pobjeda"
-            android:layout_marginBottom="40dp"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
             android:ems="10"
             android:singleLine="true"
             android:gravity="center" 
             android:textAlignment="center"
-            android:textSize="40sp"
+            android:textSize="22sp"
             android:inputType="textCapWords"
             >
 

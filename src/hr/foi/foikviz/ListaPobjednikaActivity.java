@@ -11,6 +11,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
 
+import com.example.foikviz.R;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -25,16 +27,15 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import com.example.foikviz.R;
-
 public class ListaPobjednikaActivity extends Activity {
 	Context context;
-	
+
 	@SuppressLint("NewApi")
 	@Override
 	protected void onResume() {
 		super.onResume();
-		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
+		getWindow().getDecorView().setSystemUiVisibility(
+				View.SYSTEM_UI_FLAG_LOW_PROFILE);
 	}
 
 	@Override
@@ -42,16 +43,16 @@ public class ListaPobjednikaActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(com.example.foikviz.R.layout.lista_pobjednika);
 		context = this;
-		
-		TextView tv_ukupni_broj_pobjednika = (TextView)findViewById(R.id.tv_broj_pobjednika);
+
+		TextView tv_ukupni_broj_pobjednika = (TextView) findViewById(R.id.tv_broj_pobjednika);
 		PobjednikAdapter pa = new PobjednikAdapter(context);
 		pa.openToRead();
 		tv_ukupni_broj_pobjednika.setText(Integer.toString(pa.getCount()));
 		pa.close();
-		
-		Button btn_nazad = (Button)findViewById(R.id.pobjeda_btn_nazad);
+
+		Button btn_nazad = (Button) findViewById(R.id.pobjeda_btn_nazad);
 		btn_nazad.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(getApplicationContext(),
@@ -164,9 +165,11 @@ public class ListaPobjednikaActivity extends Activity {
 			View view = super.getView(position, convertView, parent);
 			Typeface tf = Typeface.createFromAsset(getAssets(),
 					"fonts/sturkopf_grotesk_medium.ttf");
-			TextView tv_ime_prezime = (TextView)view.findViewById(R.id.tv_ime_prezime);
-			TextView tv_datum = (TextView)view.findViewById(R.id.tv_datum);
-			TextView tv_razlika_vremena = (TextView)view.findViewById(R.id.tv_razlika_vremena);
+			TextView tv_ime_prezime = (TextView) view
+					.findViewById(R.id.tv_ime_prezime);
+			TextView tv_datum = (TextView) view.findViewById(R.id.tv_datum);
+			TextView tv_razlika_vremena = (TextView) view
+					.findViewById(R.id.tv_razlika_vremena);
 			tv_ime_prezime.setTypeface(tf);
 			tv_datum.setTypeface(tf);
 			tv_razlika_vremena.setTypeface(tf);

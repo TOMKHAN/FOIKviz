@@ -54,9 +54,15 @@ public class PobjednikAdapter {
 		}
 	}
 
-	public void upisiPobjednika(int id_pobjednika, String ime_prezime, long razlika_vremena) {
-		sqLiteDatabase.execSQL("INSERT INTO pobjednik(id_pobjednika, ime, razlika_vremena) "
-				+ "values ('" + id_pobjednika + "','" + ime_prezime + "', '" + razlika_vremena + "');");
+	public void upisiPobjednika(int id_pobjednika, String ime_prezime,
+			long razlika_vremena) {
+		sqLiteDatabase
+				.execSQL("INSERT INTO pobjednik(id_pobjednika, ime, razlika_vremena) "
+						+ "values ('"
+						+ id_pobjednika
+						+ "','"
+						+ ime_prezime
+						+ "', '" + razlika_vremena + "');");
 
 	}
 
@@ -76,11 +82,12 @@ public class PobjednikAdapter {
 			id_pobjednika = cursor.getInt(cursor
 					.getColumnIndex("id_pobjednika"));
 			ime = cursor.getString(cursor.getColumnIndex("ime"));
-			millis = cursor.getLong(cursor
-					.getColumnIndexOrThrow("vrijeme"));
-			razlika_vremena = cursor.getLong(cursor.getColumnIndex("razlika_vremena"));
+			millis = cursor.getLong(cursor.getColumnIndexOrThrow("vrijeme"));
+			razlika_vremena = cursor.getLong(cursor
+					.getColumnIndex("razlika_vremena"));
 			datum = new Date(millis);
-			Pobjednik pob = new Pobjednik(id_pobjednika, ime, datum, razlika_vremena);
+			Pobjednik pob = new Pobjednik(id_pobjednika, ime, datum,
+					razlika_vremena);
 			rezultati.add(pob);
 		}
 		cursor.close();

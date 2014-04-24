@@ -2,9 +2,9 @@ package hr.foi.foikviz.types;
 
 public class Vrijeme {
 	long pocetak = 0, zavrsetak = 0;
-	
-	public Vrijeme(){
-		
+
+	public Vrijeme() {
+
 	}
 
 	public long getPocetak() {
@@ -22,6 +22,5 @@ public class Vrijeme {
 	public void setZavrsetak(long zavrsetak) {
 		this.zavrsetak = zavrsetak;
 	}
-	
 
 }

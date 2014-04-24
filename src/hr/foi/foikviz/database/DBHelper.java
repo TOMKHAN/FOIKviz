@@ -18,8 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		db.execSQL("CREATE TABLE pitanja (id_pitanja INTEGER NOT NULL PRIMARY KEY, pitanje varchar(100) NOT NULL, prvi_odgovor varchar(100) NOT NULL, "
 				+ "drugi_odgovor varchar(100) NOT NULL, treci_odgovor varchar(100) NOT NULL, cetvrti_odgovor varchar(100) NOT NULL, tocan_odgovor integer(10) NOT NULL,"
 				+ "razina integer (10) NOT NULL);");
-		
-		//unos_pitanja
+
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(1,'Euro je:','Valuta u Europskoj uniji', 'Valuta u Švicarskoj', 'Valuta u Hrvatskoj', 'Valuta u SAD-u',1,1);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(2,'Dionicama se trguje:','U trgovini', 'U banci', 'Shopping centru', 'Na burzi',4,1);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(3,'Službena valuta u SAD-u je:','Euro', 'Amerčki dolar', 'Britanska funta', 'Švicarski franak',2,1);");
@@ -79,6 +78,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(57,'Rušenjem Berlinskoga zida 1989. godine dolazi do transformacije komandnoga','slobodno tržišno', 'plansko', 'naredbodavno', 'kapitalističko',1,4);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(58,'U gospodarskome djelovanju često moramo birati između nekoliko mogućnosti. Koji se troškovi u tome slučaju javljaju? ','granični troškovi', 'fiksni troškovi', 'oportunitetni troškovi ', 'varijabilni troškovi',3,4);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(59,'Kada je uvedena zajednička novčana jedinica zemalja Europske unije?','1992. godine', '1999. godine', '2002. godine ', '2003. godine',2,4);");
+		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(60,'Potencijalani kupac keramičkih pločica obilazi prodajna mjesta i proučava asortiman,','Razvojna', 'Selekcijska', 'Informacijska', 'Alokacijska',3,4);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(61,'Koja od navedenih ekonomskih doktrina zastupa ideju tržišnoga gospodarstva','Liberalna', 'Kejnzijanska', 'Merkantilistička', 'Kameralistička',1,4);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(62,'Koji od navedenih instrumenata marketinškoga spleta upotrebljava poduzetnik kada organizira degustaciju svojih sireva na lokalnoj tržnici?','Plasman', 'Proizvod', 'Promociju', 'Cijenu',3,5);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(63,'Kojom se bilancom prikazuje ravnoteža između vrijednosti imovine i veličine obveza pojedinoga poduzeća?','Stanja', 'Plaćanja', 'Bogatstva', 'Uspjeha',1,5);");
@@ -144,7 +144,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(123,'U jedan bistabil moguće je pohraniti?','1 byte', '1 bit', '8 bitova', '8 bayta',2,3);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(124,'Naredba se dekodira u:','Aritmetičkoj-logičkoj jedinici', 'Cache memoriji', 'Tijeku prijenosa podataka', 'Upravljačkoj jedinici',4,3);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(125,'Koliko bitova može procesor obraditi u jednom ciklusu?','Jedan bit', 'Jedan bajt', 'Onoliko bitova koliko mu stane u registar', 'Ovisno o naredbi koja se izvodi ',3,3);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(126,'Komunikacijski kanal koji spaja dijelove računala, a kojim se prenose podaci, naredbe, adrese i upravljačke naredbe, zove se:','Kouminkacijska jedinica', 'Registar', 'Sabirnica', 'Cache memorija',3,3);");
+		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(126,'Komunikacijski kanal koji spaja dijelove računala, a kojim se prenose podaci, naredbe, adrese i upravljačke naredbe, zove se:','Kouminkacijska jedinica', 'Registar', 'Sabirnica', 'Cache mamorija',3,3);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(127,'Procesor frekvencije 2 GHz u sekundi može obaviti:','2 tisuće koraka', '2 milijuna koraka', '2 milijarde koraka', '200 milijuna koraka',3,3);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(128,'Kombinacija bitova u određenom kodu predstavlja:','Broj', 'Znak', 'Podatak', 'ASCII standard',3,3);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(129,'Tko je suosnivač Microsofta?','Steve Wozniak', 'Paul Allen', 'Bill Moggridge', 'Mark Zuckerberg',2,4);");
@@ -184,68 +184,54 @@ public class DBHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(163,'Arhitektura Interneta je:','Centralizirana', 'Mobilna', 'Klijentsko.korisnička', 'Korisničko-poslužiteljska',4,6);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(164,'Adresa datoteke ili nekog drugog izvora podataka preko Interneta zove se:','WWW', 'DNS', 'URL', 'ADR',4,6);");
 		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(165,'Što od navedenog nije naziv antivirusnog programa?','Spam', 'Sophos Anti-Virus', 'AVG', 'Norton Anti-Virus',1,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(166,'Nadzorni odbor dioničkog društva mora ima najmanje:','1 člana', '2 člana', '3 člana', '4 člana',3,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(167,'Sposobnost nekog oblika imovine da se pretvori u novac je:','Likvidnost', 'Solventnost', 'Efikasnost', 'Efektivnost',1,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(168,'Pokazuje koliko je kuna prihoda ostvareno na svaku kunu troškova:','Produktivnost', 'Rentabilnost', 'Profitabilnost', 'Ekonomičnost',4,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(169,'Na čelu MMF-a nalazi se:','Dominic Strauss-Kahn ', 'Jose Manuel Barroso ', 'Christine Lagarde', 'Axel Weber',3,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(170,'Za osnivanje dioničkog društva potreban je temeljni kapital u iznosu:','0 kuna', '10 kuna', '10 000 kuna', '200 000 kuna',4,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(171,'Za osnivanje društva s ograničenom odgovornošću potreban je temeljni kapital u iznosu:','0 kuna', '10 kuna', '20 000 kuna', '200 000 kuna',3,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(172,'Henry Ford revolucionirao je tadašnji proizvodni proces uvođenjem tekuće vrpce ili:','Katapulta', 'Konvejera', 'Robota', 'Viličara',2,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(173,'Teoriju zaposlenosti, kamata i novca uveo je:','John Maynard Keynes', 'Joseph Schumpeter', 'John Galbraith', 'William Nordhaus',1,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(174,'Mijo Mirković, hrvatski pisac mnogih značajnih djela iz makroekonomije poznat je i pod imenom:','Josip Kozarac', 'Mate Balota', 'Miro Gavran', 'Joža Horvat',2,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(175,'Republika Hrvatska postala je članicom Europske unije:','01.01.2013. godine ', '01.03.2013. godine ', '01.06.2013. godine ', '01.07.2013. godine',4,1);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(176,'Koliko se zvjezdica nalazi na zastavi Europske unije:','12', '13', '14', '15',1,1);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(177,'Himna Europske unije je:','Lijepa naša', 'Oda radosti', 'Marseljeza', 'Za Elizu ',2,1);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(178,'Osnovni zakon bilance glasi:','Aktiva < Pasiva', 'Aktiva = Pasiva', 'Aktiva > Pasiva', 'Aktiva ≠ Pasiva ',2,2);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(179,'Predsjednik Hrvatske gospodarske komore je:','Ivica Todorić', 'Ivica Mudrinić', 'Emil Tedeschi', 'Nadan Vidošević ',4,2);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(180,'Stopa poreza na dobit u RH iznosi:','10%', '15%', '20%', '25%',3,3);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(181,'Ministar poduzetništva i obrta u RH je:','Gordan Maras', 'Slavko Linić', 'Ivan Vrdoljak', 'Darko Lorencin',1,3);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(182,'Ministar gospodarstva u RH je:','Gordan Maras', 'Slavko Linić', 'Darko Lorencin', 'Ivan Vrdoljak',4,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(183,'Fizičko ulaganje vrijednosti u cilju stvaranja dobara i usluga predstavljaju:','Izdaci', 'Utrošci', 'Troškovi', 'Rashodi',2,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(184,'Nastali su isključivo radi stvaranja učinaka:','Izdaci', 'Utrošci', 'Troškovi', 'Rashodi',3,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(185,'Odljevi novčanih sredstava su:','Izdaci', 'Utrošci', 'Troškovi', 'Rashodi',1,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(186,'Odbitna stavka od prihoda u računu dobiti i gubitka su:','Izdaci', 'Utrošci', 'Troškovi', 'Rashodi',4,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(187,'Svjetska trgovinska organizacije osnovana je:','1980. godine', '1985. godine ', '1990. godine', '1994. godine ',4,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(188,'Što će ispisati sljedeći dio programa?\nt := 0;\nn := 286;\ndok je n > 0 činiti\n{\nako je n mod 2 > 0 onda\nt := t + 1;\nn = n div 2;\n}\nizlaz t;','3', '-1', '5', '2',3,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(189,'Koja će biti vrijednost varijable t nakon izvođenja sljedeće naredbe?\na:=7;\nb:=9;\nc:=3;\n:=NE (NE (a<b) | (a<c) ILI NE ((c<b) ILI NE (c<a)));','0', '1', 'Nema rezultata', '01',2,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(190,'Koju će vrijednost imati varijabla x nakon izvođenja sljedećega  dijela programa?\nx:=20;\ny:=-5;\nx:=x+y;\ny:=x+y;\nx:=x+y;','10', '15', '20', '25',4,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(191,'Što će ispisati sljedeći dio programa?\nx:=18 div 6 + 18 mod 6;\nIzlaz(x);','0', '3', '6', '18',3,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(192,'Zadan je matematički izraz: z=x^2- y^2. Koji će oblik imati taj izraz zapisan u pseudo jeziku?','z := Sqr (x-y);', 'z := Sqrt (x-y);', 'z := Sqrt (x)- Sqrt (y);', 'z := Sqr (x)- Sqr (y);',4,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(193,'Koje godine je osnovan FOI?','1962', '1974', '1989', '1456',1,1);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(194,'Kada je osnovan trogodišnji studijski smjer Ekonomika poduzetništva?','2000.', '2011.', '2006.', '2003.',3,1);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(195,'Kada je pokrenut samostalni dvogodišnji diplomski studij Ekonomika poduzetništva?','2001.', '2010.', '2012.', '2005.',2,1);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(196,'Kada je krenulo izvođenje nastave stručnog studija Primjena informacijskih tehnologija u poslovanju?','2002.', '2003.', '1990.', '1999.',1,1);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(197,'Koliko različitih dekana je imao FOI?','16', '20', '9', '67',3,2);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(198,'Koliko smjerova ima preddiplomski sveučilišni studij IPS?','1', '2', '5', '3',2,2);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(199,'Koliko smjerova ima diplomski sveučilišni studij FOI?','1', '2', '3', '4',4,2);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(200,'Zgrada FOI-a bila je…','Dvorac', 'Franjevački samostan', 'Isusovački samostan', 'Benediktinski samostan',3,2);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(201,'Nastava na FOI-ju izvodi se u…','2 zgrade', '3 zgrade', '6 zgrada', '1 zgrada',1,2);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(202,'Da bi završili studij, na sveučilišnom preddiplomskom „Poslovni sustavi“ morate položiti koliko matematika?','1', '4', '3', '5',2,2);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(203,'FOI je…','Tehnički fakultet', 'Društveni fakultet', 'Socijalni fakultet', 'Filozofski fakultet',2,3);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(204,'Nakon završenog trogodišnjeg obrazovanja na preddiplomskom sveučilišnom studija IPS stječe se titula?','Univ.bacc.inf', 'Univ.bacc.oec', 'Univ.bacc.foi', 'Kralj svemira',1,3);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(205,'Na FOI-u da bi završio studij potrebno je zadovoljiti?','Baklavu', 'Kremšnitu', 'Pitu', 'Tortu',3,3);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(206,'Gdje je smješten FOI?','Zagrebu', 'Čakovcu', 'Sraćincu', 'Varaždinu',4,3);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(207,'Zabranjeni komični strip FOI-a zvao se?','Studenti i krave', 'Ja sam Varaždinec', 'Deponizacija', 'FOI carevi',3,3);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(208,'Nakon završenog trogodišnjeg obrazovanja na stručnom studiju PITUP stječe se titula?','Dr. Sc. Pitupovac', 'Stručni prvostupnik poslovne informatike', 'Majstor od zanata', 'Bacc.pitup.ing',2,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(209,'Kratica PITUP stoji za?','Primjena informacijske tehnologije u poslovanju', 'Patuljasto i toksično Ubuntu prase', 'Pahuljice i informacije u prostoru', 'Primjena inteligentnih toksina u povijesti',1,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(210,'Prema Deponizaciji, zašto je FOI-evac prešao cestu?','…da pređe na drugu stranu', '..jer je vidio sladoled', '…da upiše PITUP', '…jer je pao OPM',3,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(211,'Prema Deponizaciji, što predstavlja kratica PITUP?','Primjena informacijske tehnologije u poslovanju', 'Patuljasto i toksično Ubuntu prase', 'Pahuljice i informacije u prostoru', 'Primjena inteligentnih toksina u povijesti',2,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(212,'Facebook stranica Fakulteta Organizacije i informatike ima oko…','1000 lajkova', '1500 lajkova', '3888 lajkova', '17000 lajkova',4,4);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(213,'Dan sporta FOI-a popularno se zove?','Maki-jada', 'Laptop-jada', 'Kompjuter-jada', 'FOI-jada',4,5);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(214,'Datuma dana Fakulteta je?','11.2.', '30.4.', '18.12.', '13.6.',3,5);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(215,'Adresa FOI 1?','Pavlinska 2', 'Jalkovečka 67', 'Trg Josipa bana Jelačića', 'Uska ulica',1,5);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(216,'Kratica za Europski sustav prikupljanja i prenošenja bodova (kredita) je:','ECTS ', 'ECC', 'ETC', 'ESP',1,5);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(217,'U tekućoj akademskoj godini preddiplomski sveučilišni studij IPS upisalo je?','150 brucoša', '124 brucoša', '458 brucoša', '267 brucoša',4,5);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(218,'U tekućoj akademskoj godini preddiplomski sveučilišni studij EP upisalo je?','150 brucoša', '124 brucoša', '458 brucoša', '267 brucoša',1,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(219,'U tekućoj akademskoj godini stručni studij PITUP upisalo je?','150 student', '257 studenta', '458 studenta', '267 studenta',2,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(220,'U tekućoj akademskoj godini diplomski sveučilišni studij EP upisalo je?','149 studenta', '150 studenta', '148 studenta', '138 studenta',1,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(221,'FOI ima ukupno … studenta?','Oko 3000', 'Oko 2000', '0ko 1320', 'Oko 500',1,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(222,'U tekućoj akademskoj godini diplomski sveučilišni studij informatike upisalo je?','101 student', '102 studenta', '103 studenta', '104 studenta',1,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(223,'Što ne pripada u elemente korisničkog računa?','Korisničko ime', 'Lozinka', 'Program Outlook za rad s elektroničkom poštom', 'Adresa elektroničke pošte',3,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(224,'Što je spam?','Pop-up', 'Željene reklame', 'Smeće', 'Neželjene masovne poruke',4,6);");
-		db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(225,'Što je web katalog?','Sadržaj knjige na webu', 'Sadržaj određene web stranic', 'Sadržaj udžbenika', 'Web stranica koja omogućuje pretragu web sadržaja po kategorijama',4,6);");
 
 		db.execSQL("CREATE TABLE pobjednik (id_pobjednika INTEGER NOT NULL PRIMARY KEY, ime varchar(100) NOT NULL, vrijeme TIMESTAMP NOT NULL DEFAULT current_timestamp, razlika_vremena TIMESTAMP NOT NULL);");
+
+		/*
+		 * db.execSQL(
+		 * "insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(1,'Ovo je pitanje1',"
+		 * + "'Prvi odgovor1!', '111', '11111ASDASDA', 'FOI1!',2,1);");
+		 * db.execSQL(
+		 * "insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(2,'Ovo je pitanje2',"
+		 * +
+		 * "'Prvi odgovor2!', 'Drugii2222iiii', 'Trec2222iiii', 'FOI2!',2,1);");
+		 * db.execSQL(
+		 * "insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(3,'Ovo je pitanje3',"
+		 * + "'Prvi odgovor3!', 'Treci333ii', 'Tre3333ciiii', 'FOI3!',2,1);");
+		 * db.execSQL(
+		 * "insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(4,'Ovo je pitanje4',"
+		 * +
+		 * "'Prvi odgovor4!', 'Drugiii4444iii', 'Trecii4444ii', 'FOI4!',2,1);");
+		 * 
+		 * db.execSQL(
+		 * "insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(5,'Došli ste na razinu 2',"
+		 * +
+		 * "'Prvi odgovor4!', 'Drugiii4444iii', 'Trecii4444ii', 'FOI4!',2,2);");
+		 * db.execSQL(
+		 * "insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(6,'Došli ste na razinu 2 PITANJE 222222',"
+		 * +
+		 * "'Prvi odgovor4!', 'Drugiii4444iii', 'Trecii4444ii', 'FOI4!',2,2);");
+		 * db.execSQL(
+		 * "insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(7,'Došli ste na razinu 2 PITANJE 222222',"
+		 * +
+		 * "'Prvi odgovor4!', 'Drugiii4444iii', 'Trecii4444ii', 'FOI4!',2,2);");
+		 * db.execSQL(
+		 * "insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(8,'Došli ste na razinu 2 PITANJE 222222',"
+		 * +
+		 * "'Prvi odgovor4!', 'Drugiii4444iii', 'Trecii4444ii', 'FOI4!',2,2);");
+		 * db.execSQL(
+		 * "insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(9,'Došli ste na razinu 2 PITANJE 222222',"
+		 * +
+		 * "'Prvi odgovor4!', 'Drugiii4444iii', 'Trecii4444ii', 'FOI4!',2,2);");
+		 * db.execSQL(
+		 * "insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(10,'Došli ste na razinu 2 PITANJE 222222',"
+		 * +
+		 * "'Prvi odgovor4!', 'Drugiii4444iii', 'Trecii4444ii', 'FOI4!',2,2);");
+		 */
+
+		// db.execSQL("insert into pitanja(id_pitanja, pitanje, prvi_odgovor, drugi_odgovor, treci_odgovor, cetvrti_odgovor, tocan_odgovor, razina) values(5,'Ovo je pitanje',"
+		// +
+		// "'Prvi odgovor!', 'Drugiiiiii', 'Treciiii', 'FOI!',2,2);");
 
 	}
 

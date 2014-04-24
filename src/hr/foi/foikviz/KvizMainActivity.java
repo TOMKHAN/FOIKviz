@@ -4,6 +4,8 @@ import hr.foi.foikviz.database.PitanjaAdapter;
 
 import java.util.Random;
 
+import com.example.foikviz.R;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -22,18 +24,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.foikviz.R;
-
 @SuppressLint("NewApi")
 public class KvizMainActivity extends Activity {
 	private int razina, broj_pitanja, redni_broj_pitanja, random_broj;
 	private String odgovor;
-	
+
 	@SuppressLint("NewApi")
 	@Override
 	protected void onResume() {
 		super.onResume();
-		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
+		getWindow().getDecorView().setSystemUiVisibility(
+				View.SYSTEM_UI_FLAG_LOW_PROFILE);
 	}
 
 	@Override
@@ -45,7 +46,7 @@ public class KvizMainActivity extends Activity {
 			razina = bundle.getInt("razina");
 			Log.w("bundle", "PROBUĐENNNNNN");
 		}
-		
+
 		Typeface tf = Typeface.createFromAsset(getAssets(),
 				"fonts/sturkopf_grotesk_medium.ttf");
 		TextView tv_tekst_pitanja = (TextView) findViewById(R.id.tekst_pitanja);
@@ -73,11 +74,6 @@ public class KvizMainActivity extends Activity {
 		TextView tv_progressBar = (TextView) findViewById(R.id.tekst_progressa);
 		tv_progressBar.setText(razina + "/6");
 
-		// IDEJA: maturantu dam da mjenja kod aplikacije i da vidimo jel bi znao
-		// prevariti app da dođe odma na pobjedu!
-		// IDEJA: Na pobjedničkoj stranici imamo broj nagrada. Random broj
-		// nagrade generirati tamo i onda sliku prikazati na ekranu da su
-		// osvojili!
 		if (razina == 7) {
 			Intent pobjedaIntent = new Intent(getApplicationContext(),
 					PobjedaActivity.class);
@@ -161,11 +157,13 @@ public class KvizMainActivity extends Activity {
 		pa.openToRead();
 		if (odgovor_po_redu == pa.getTocanOdgovor(razina, redni_broj_pitanja)) {
 			razina += 1;
-			//http://developer.android.com/about/dashboards/index.html
-			//verzije ispod 16 ne podržavaju programsko mijenjanje resursa slike
+			// http://developer.android.com/about/dashboards/index.html
+			// verzije ispod 16 ne podržavaju programsko mijenjanje resursa
+			// slike
 			if (Build.VERSION.SDK_INT >= 16)
-				v.setBackground(getResources().getDrawable(R.drawable.btn_green));
-			
+				v.setBackground(getResources()
+						.getDrawable(R.drawable.btn_green));
+
 			Log.w("razinaaaa u provjeri", "Iznosii: " + razina);
 			Intent intent = getIntent();
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -177,6 +175,7 @@ public class KvizMainActivity extends Activity {
 					R.drawable.pocetna_kviz_out);
 		} else {
 			prikaziToast("Odgovor nije točan!");
+			
 			Intent i = new Intent(getApplicationContext(),
 					PocetniScreenActivity.class);
 			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
@@ -189,19 +188,19 @@ public class KvizMainActivity extends Activity {
 		return 1;
 	}
 	
-	public void prikaziToast(String text){
-		 LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.custom_toast_message,
-                                       (ViewGroup) findViewById(R.id.custom_toast_layout));
+	public void prikaziToast(String text) {
+		LayoutInflater inflater = getLayoutInflater();
+		View layout = inflater.inflate(R.layout.custom_toast_message,
+				(ViewGroup) findViewById(R.id.custom_toast_layout));
 
-        TextView tv = (TextView) layout.findViewById(R.id.textToShow);
-        tv.setText(text);
+		TextView tv = (TextView) layout.findViewById(R.id.textToShow);
+		tv.setText(text);
 
-        Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.BOTTOM, 0, 0);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(layout);
-        toast.show();
+		Toast toast = new Toast(getApplicationContext());
+		toast.setGravity(Gravity.BOTTOM, 0, 0);
+		toast.setDuration(Toast.LENGTH_SHORT);
+		toast.setView(layout);
+		toast.show();
 	}
 
 	private String getOdgovor(int odgovor_po_redu, int razina, int id_pitanja) {

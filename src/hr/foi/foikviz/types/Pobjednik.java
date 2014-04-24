@@ -8,7 +8,8 @@ public class Pobjednik {
 	private Date datum;
 	private long razlika_vremena;
 
-	public Pobjednik(int id_pobjednik, String ime, Date datum2, long razlika_vremena) {
+	public Pobjednik(int id_pobjednik, String ime, Date datum2,
+			long razlika_vremena) {
 		this.setId_pobjednika(id_pobjednik);
 		this.setIme_prezime(ime);
 		this.setDatum(datum2);
@@ -46,6 +47,5 @@ public class Pobjednik {
 	public void setRazlika_vremena(long razlika_vremena) {
 		this.razlika_vremena = razlika_vremena;
 	}
-	
-	
+
 }

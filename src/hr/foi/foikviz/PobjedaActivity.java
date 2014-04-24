@@ -16,7 +16,11 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONStringer;
 
+import com.example.foikviz.R;
+
+import android.R.bool;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -24,6 +28,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.JsonWriter;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -35,20 +40,19 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.foikviz.R;
-
 public class PobjedaActivity extends Activity {
 	private String pobjednik;
 	private Context context;
 	private int broj_pobjednika;
 	private long razlika_vremena;
 	NetworkConnectivity nc;
-	
+
 	@SuppressLint("NewApi")
 	@Override
 	protected void onResume() {
 		super.onResume();
-		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
+		getWindow().getDecorView().setSystemUiVisibility(
+				View.SYSTEM_UI_FLAG_LOW_PROFILE);
 	}
 
 	@Override
@@ -67,13 +71,13 @@ public class PobjedaActivity extends Activity {
 				"fonts/sturkopf_grotesk_medium.ttf");
 		et_ime_prezime.setTypeface(tf);
 
-		//button za nazad koji ne upisuje pobjednika!
+		// button za nazad koji ne upisuje pobjednika!
 		ImageButton ib_natrag = (ImageButton) findViewById(R.id.btn_nazad_pobjeda);
 		ib_natrag.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				prikaziToast("Nije se upisao pobjednik.");
+				prikaziToast("Nije se upisao Pobjednik.");
 				Intent i = new Intent(getApplicationContext(),
 						PocetniScreenActivity.class);
 				i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -82,8 +86,8 @@ public class PobjedaActivity extends Activity {
 						R.drawable.pocetna_kviz_out);
 			}
 		});
-		
-		//button koji ima provjere, upiše pobjednika u bazu i pošalje na net!
+
+		// button koji ima provjere, upiše pobjednika u bazu i pošalje na net!
 		ImageButton btn_upisi_pobjednika = (ImageButton) findViewById(R.id.btn_upisi_pobjednika);
 		btn_upisi_pobjednika.setOnClickListener(new OnClickListener() {
 			@Override
@@ -94,17 +98,18 @@ public class PobjedaActivity extends Activity {
 				if (et_ime_prezime.getText().toString().length() == 0) {
 					prikaziToast("Upišite ime da vas možemo razlikovati u gomili!");
 				} else {
-					if(nc.haveActiveInternetConnection()){
+					if (nc.haveActiveInternetConnection()) {
 						upisiPobjednika();
-						prikaziToast("Podaci poslani na web server!");
+						Toast.makeText(context, "ŠALJE PODATKEEEEEEE",
+								Toast.LENGTH_SHORT).show();
 						Intent i = new Intent(getApplicationContext(),
 								PocetniScreenActivity.class);
 						i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 						startActivity(i);
 						overridePendingTransition(R.drawable.pocetna_kviz_in,
 								R.drawable.pocetna_kviz_out);
-					}else{
-						prikaziToast("Trebate aktivnu Internet vezu kako bi se podaci poslali na web server!");
+					} else {
+						prikaziToast("Trebamo aktivnu Internet konekciju kako bi mogli poslati podatke na web server!");
 					}
 				}
 			}
@@ -131,9 +136,9 @@ public class PobjedaActivity extends Activity {
 	}
 
 	public void upisiPobjednika() {
-		//slanje jsona
+		// slanje jsona
 		new sendJsonData().execute();
-		
+
 		EditText et_ime_prezime = (EditText) findViewById(R.id.pobjeda_ime_prezime);
 		pobjednik = et_ime_prezime.getText().toString();
 		razlika_vremena = (PocetniScreenActivity.vrijeme.getZavrsetak() - PocetniScreenActivity.vrijeme
@@ -146,43 +151,45 @@ public class PobjedaActivity extends Activity {
 		pa.upisiPobjednika(broj_pobjednika, pobjednik, razlika_vremena);
 		pa.close();
 	}
-	
-	public void prikaziToast(String text){
-		 LayoutInflater inflater = getLayoutInflater();
-         View layout = inflater.inflate(R.layout.custom_toast_message,
-                                        (ViewGroup) findViewById(R.id.custom_toast_layout));
 
-         TextView tv = (TextView) layout.findViewById(R.id.textToShow);
-         tv.setText(text);
+	public void prikaziToast(String text) {
+		LayoutInflater inflater = getLayoutInflater();
+		View layout = inflater.inflate(R.layout.custom_toast_message,
+				(ViewGroup) findViewById(R.id.custom_toast_layout));
 
-         Toast toast = new Toast(getApplicationContext());
-         toast.setGravity(Gravity.BOTTOM, 0, 0);
-         toast.setDuration(Toast.LENGTH_SHORT);
-         toast.setView(layout);
-         toast.show();
+		TextView tv = (TextView) layout.findViewById(R.id.textToShow);
+		tv.setText(text);
+
+		Toast toast = new Toast(getApplicationContext());
+		toast.setGravity(Gravity.BOTTOM, 0, 0);
+		toast.setDuration(Toast.LENGTH_SHORT);
+		toast.setView(layout);
+		toast.show();
 	}
-	
+
 	public class sendJsonData extends AsyncTask<String, Void, String> {
 		@Override
 		protected String doInBackground(String... strings) {
 			try {
 				postData();
 			} catch (JSONException e) {
-				Log.w("JSONNNNN", "u send JSONU PROBLEM!");
+				Log.w("JSONNNNN", "u snnd JSONU PROBLEM!");
 				e.printStackTrace();
 			}
 			return "OK";
 		}
 	}
-	
-	public void postData() throws JSONException{  
+
+	public void postData() throws JSONException {
 		// Create a new HttpClient and Post Header
 		HttpClient httpclient = new DefaultHttpClient();
-		//HttpPost httppost = new HttpPost("http://tosulc.comoj.com/primanje_podataka.php");
-		//HttpPost httppost = new HttpPost("http://arka.foi.hr/~zantolov/foikviz/primanje_podataka.php");
-		//HttpPost httppost = new HttpPost("http://antolovic-zoran.com/foikviz/primanje_podataka.php");
-		HttpPost httppost = new HttpPost("http://prijavi-pozar.com/foikviz/primanje_podataka.php");
-		
+		HttpPost httppost = new HttpPost(
+				"http://tosulc.comoj.com/primanje_podataka.php");
+		// HttpPost httppost = new
+		// HttpPost("http://arka.foi.hr/~zantolov/foikviz/primanje_podataka.php");
+		// HttpPost httppost = new
+		// HttpPost("http://antolovic-zoran.com/foikviz/primanje_podataka.php");
+
 		JSONObject json = new JSONObject();
 
 		try {
@@ -191,24 +198,24 @@ public class PobjedaActivity extends Activity {
 			json.put("razlika_vremena", razlika_vremena);
 			json.put("vrijeme", System.currentTimeMillis());
 
-			JSONArray postjson=new JSONArray();
+			JSONArray postjson = new JSONArray();
 			postjson.put(json);
 
 			// Post the data:
-			httppost.setHeader("json",json.toString());
-			httppost.getParams().setParameter("jsonpost",postjson);
+			httppost.setHeader("json", json.toString());
+			httppost.getParams().setParameter("jsonpost", postjson);
 
 			// Execute HTTP Post Request
-			//System.out.print(json);
+			// System.out.print(json);
 			Log.w("JSONNNNN", json.toString());
 			HttpResponse response = httpclient.execute(httppost);
 
 			// for JSON:
-			if(response != null)
-			{
+			if (response != null) {
 				InputStream is = response.getEntity().getContent();
 
-				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+				BufferedReader reader = new BufferedReader(
+						new InputStreamReader(is));
 				StringBuilder sb = new StringBuilder();
 
 				String line = null;
@@ -229,12 +236,11 @@ public class PobjedaActivity extends Activity {
 				}
 			}
 
-
-		}catch (ClientProtocolException e) {
+		} catch (ClientProtocolException e) {
 			Log.w("JSONNNNN", "NOOOOOOO1");
 		} catch (IOException e) {
 			Log.w("JSONNNNN", "NOOOOOOO2");
-    	}
-	}//postData
-	
-}//class
+		}
+	}// postData
+
+}// class

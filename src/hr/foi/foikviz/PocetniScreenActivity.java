@@ -16,22 +16,23 @@ import android.widget.ImageView;
 import com.example.foikviz.R;
 
 public class PocetniScreenActivity extends Activity {
-	public static Vrijeme vrijeme = new Vrijeme(); 
-	
+	public static Vrijeme vrijeme = new Vrijeme();
+
 	@SuppressLint("NewApi")
 	@Override
 	protected void onResume() {
 		super.onResume();
-		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
+		getWindow().getDecorView().setSystemUiVisibility(
+				View.SYSTEM_UI_FLAG_LOW_PROFILE);
 	}
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pocetna);
-		
-		ImageButton ib_oblak3 = (ImageButton) findViewById(R.id.oblak3);
-		ib_oblak3.setOnClickListener(new OnClickListener() {
+
+		ImageButton btn_highscores = (ImageButton) findViewById(R.id.oblak3);
+		btn_highscores.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -44,8 +45,8 @@ public class PocetniScreenActivity extends Activity {
 			}
 		});
 
-		ImageButton ib_oblak2 = (ImageButton) findViewById(R.id.oblak2);
-		ib_oblak2.setOnClickListener(new OnClickListener() {
+		ImageButton btn_nagrade = (ImageButton) findViewById(R.id.oblak2);
+		btn_nagrade.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -53,8 +54,9 @@ public class PocetniScreenActivity extends Activity {
 						NagradeActivity.class);
 				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
-				overridePendingTransition(R.drawable.pocetna_nagrade_in, R.drawable.pocetna_nagrade_out);
-				
+				// overridePendingTransition(R.drawable.pocetna_nagrade_in,
+				// R.drawable.pocetna_nagrade_out);
+
 			}
 		});
 
@@ -101,7 +103,10 @@ public class PocetniScreenActivity extends Activity {
 		 */
 		pokreniAnimaciju(btn_na_kviz, x1, y1, x2, y2, 1500);
 		ImageButton ib_oblak1 = (ImageButton) findViewById(R.id.oblak1);
+		ImageButton ib_oblak2 = (ImageButton) findViewById(R.id.oblak2);
+		ImageButton ib_oblak3 = (ImageButton) findViewById(R.id.oblak3);
 		ImageButton ib_oblak4 = (ImageButton) findViewById(R.id.oblak4);
+		ImageView tv_zadnji_igrac = (ImageView) findViewById(R.id.grad_varazdin);
 		ImageView iv_foi_logo = (ImageView) findViewById(R.id.foi_logo);
 		ImageView iv_koliko_znas = (ImageView) findViewById(R.id.iv_otkrij_koliko_znas);
 
@@ -126,6 +131,11 @@ public class PocetniScreenActivity extends Activity {
 		x2 = 0;
 		y2 = 0;
 		pokreniAnimaciju(ib_oblak4, x1, y1, x2, y2, 1200);
+		x1 = -5;
+		y1 = 0;
+		x2 = 0;
+		y2 = 0;
+		pokreniAnimaciju(tv_zadnji_igrac, x1, y1, x2, y2, 1500);
 		// foilogo
 		x1 = 0;
 		y1 = 2;

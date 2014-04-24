@@ -1,7 +1,6 @@
 package hr.foi.foikviz.helper;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,16 +11,18 @@ import android.provider.Settings;
 
 /**
  * Used to check network connectivity and other stuff
+ * 
  * @author Renato
- *
+ * 
  */
 public class NetworkConnectivity {
 
 	Context context;
-	
+
 	public NetworkConnectivity(Context context) {
 		this.context = context;
 	}
+
 	/**
 	 * Checks if there is network connectivity.
 	 * 
@@ -31,7 +32,8 @@ public class NetworkConnectivity {
 		boolean haveConnectedWifi = false;
 		boolean haveConnectedMobile = false;
 
-		ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager cm = (ConnectivityManager) context
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo[] netInfo = cm.getAllNetworkInfo();
 		for (NetworkInfo ni : netInfo) {
 			if (ni.getTypeName().equalsIgnoreCase("WIFI"))
@@ -64,7 +66,6 @@ public class NetworkConnectivity {
 		}
 		return true;
 	}
-	
 
 	/**
 	 * Checks if user location is available.
@@ -74,7 +75,8 @@ public class NetworkConnectivity {
 	 * @return True if user location is available, false if it isn't
 	 */
 	public boolean checkIfUserLocationAvailable(Context context) {
-		LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+		LocationManager locationManager = (LocationManager) context
+				.getSystemService(Context.LOCATION_SERVICE);
 		boolean networkLocationEnabled = locationManager
 				.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 		boolean gpsProviderEnabled = locationManager
@@ -85,28 +87,30 @@ public class NetworkConnectivity {
 		}
 		return true;
 	}
-	
+
 	/**
-	 * Shows no Internet connection warning alert dialog with OK and Open settings button.
+	 * Shows no Internet connection warning alert dialog with OK and Open
+	 * settings button.
 	 */
 	public void showNoInternetConnectionAlertDialog() {
 		AlertDialog alertDialog;
 		alertDialog = new AlertDialog.Builder(context).create();
 
 		alertDialog.setTitle("Upozorenje!");
-		alertDialog.setMessage("Nemate aktivnu!"
-				+ "<br><br>" + "Trebate aktivnu Internet vezu!");
+		alertDialog.setMessage("Nemate aktivnu!" + "<br><br>"
+				+ "Trebate aktivnu Internet vezu!");
 
-		alertDialog.setButton(Dialog.BUTTON_POSITIVE, "OK",
+		alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK",
 				new DialogInterface.OnClickListener() {
+					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						// ok
 					}
 				});
 
-		alertDialog.setButton(Dialog.BUTTON_NEGATIVE,
-				"Otvori postavke!",
-				new DialogInterface.OnClickListener() {
+		alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+				"Otvori postavke!", new DialogInterface.OnClickListener() {
+					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						context.startActivity(new Intent(
 								Settings.ACTION_WIRELESS_SETTINGS));
